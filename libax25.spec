@@ -5,13 +5,6 @@ Version:	0.0.9
 Release:	2
 License:	LGPL
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	Библиотеки
-Group(uk):	Б╕бл╕отеки
 Source0:	ftp://sunsite.icm.edu.pl/vol/rzm1/linux-debian/pool/main/liba/libax25/%{name}_%{version}.orig.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -26,13 +19,6 @@ Te biblioteki s╠ potrzebne aby uruchamiaФ programy dla radioamatorСw.
 Summary:	ax25 libraries development files
 Summary(pl):	Pliki dla programistСw u©ywaj╠cych bibliotek ax25
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -45,13 +31,6 @@ Dodatkowe pliki potrzebne do kompilacji programСw dla radioamatorСw.
 Summary:	ax25 static libraries
 Summary(pl):	Biblioteki statyczne ax25
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static

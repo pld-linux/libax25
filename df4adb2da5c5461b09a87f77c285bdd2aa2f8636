@@ -1,0 +1,5 @@
+From ChangeLog:
+  * libax25io handles nonblocking io correctly. (PE1RXQ)
+  THIS BREAKS PRACTICLY EVERY APP USING THIS LIBRARY, FIX THEM!!!
+- updated to 0.0.11,
+- STBR,

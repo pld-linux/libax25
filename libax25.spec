@@ -1,4 +1,5 @@
 Summary:	ax25 libraries for hamradio applications
+Summary(pl):	Biblioteki ax25 dla aplikacji hamradio
 Name:		libax25
 Version:	0.0.9
 Release:	1
@@ -14,10 +15,11 @@ These libraries are used for applications that need to get to some
 special structures used in hamradio.
 
 %description -l pl
-Te biblioteki sa potrzebne aby odpalic programy dla radioamatorow.
+Te biblioteki s± potrzebne aby uruchamiaæ programy dla radioamatorów.
 
 %package devel
 Summary:	ax25 libraries development files
+Summary(pl):	Pliki dla programistów u¿ywaj±cych bibliotek ax25
 Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
 Group(pl):	Aplikacje/Komunikacja
@@ -27,7 +29,7 @@ Requires:	%{name} = %{version}
 The extra files needed to compile hamradio utilities.
 
 %description devel -l pl
-Dodatkowe pliki potrzebne do kompilacji programow dla radioamatorow.
+Dodatkowe pliki potrzebne do kompilacji programów dla radioamatorów.
 
 %package static
 Summary:	ax25 static libraries
@@ -57,6 +59,7 @@ install -d ${RPM_BUILD_ROOT}/var/ax25
 %{__make} DESTDIR=${RPM_BUILD_ROOT} install installconf
 
 gzip -9nf AUTHORS NEWS README ChangeLog
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 

@@ -1,8 +1,8 @@
 Summary:	ax25 libraries for hamradio applications
 Summary(pl):	Biblioteki ax25 dla aplikacji hamradio
 Name:		libax25
-Version:	0.0.10
-Release:	3
+Version:	0.0.11
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/ax25/%{name}-%{version}.tar.gz

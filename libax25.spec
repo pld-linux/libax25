@@ -80,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libax25*.la
+%{_libdir}/libax25*.la
 %attr(755,root,root) %{_libdir}/libax25*.so
 %{_mandir}/man3/*
 %{_includedir}/netax25/*

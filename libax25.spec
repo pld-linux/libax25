@@ -6,6 +6,10 @@ Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://prdownloads.sourceforge.net/ax25/%{name}-%{version}.tar.gz
+URL:		http://ax25.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -44,7 +48,7 @@ Biblioteki statyczne ax25.
 
 %build
 rm -f missing
-libtoolize --copy --force
+%{__libtoolize}
 aclocal
 %{__autoconf}
 %{__automake}

@@ -6,6 +6,7 @@ Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/ax25/%{name}-%{version}.tar.gz
+# Source0-md5:	c6ea01e81118451e2e892e634c576c17
 URL:		http://ax25.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake

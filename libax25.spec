@@ -1,9 +1,8 @@
-# TODO: FHS (/var/ax25 -> /var/lib/ax25(?))
 Summary:	ax25 libraries for hamradio applications
 Summary(pl):	Biblioteki ax25 dla aplikacji hamradio
 Name:		libax25
 Version:	0.0.10
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/ax25/%{name}-%{version}.tar.gz
@@ -12,6 +11,8 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_localstatedir		/var/lib
 
 %description
 These libraries are used for applications that need to get to some
@@ -58,7 +59,7 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d ${RPM_BUILD_ROOT}/var/ax25
+install -d $RPM_BUILD_ROOT%{_localstatedir}/ax25
 
 %{__make} DESTDIR=${RPM_BUILD_ROOT} install installconf
 
@@ -76,7 +77,6 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %{_sysconfdir}/ax25/nrports
 %config(noreplace) %{_sysconfdir}/ax25/rsports
 %attr(755,root,root) %{_libdir}/libax25*.so.*.*
-# NOT FHS-compliant
 %dir %{_localstatedir}/ax25
 %{_mandir}/man5/*
 

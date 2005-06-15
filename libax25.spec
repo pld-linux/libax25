@@ -1,3 +1,4 @@
+%bcond_without	static	# don't build static library
 Summary:	ax25 libraries for hamradio applications
 Summary(pl):	Biblioteki ax25 dla aplikacji hamradio
 Name:		libax25
@@ -55,7 +56,8 @@ rm -f missing
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	%{!?with_static:--disable-static}
 %{__make}
 
 %install
@@ -88,6 +90,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/*
 %{_includedir}/netax25/*
 
+%if %{with static}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libax25*.a
+%endif

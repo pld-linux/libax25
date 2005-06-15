@@ -1,4 +1,6 @@
+# Conditional build:
 %bcond_without	static_libs	# don't build static library
+#
 Summary:	ax25 libraries for hamradio applications
 Summary(pl):	Biblioteki ax25 dla aplikacji hamradio
 Name:		libax25

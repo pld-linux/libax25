@@ -29,7 +29,7 @@ Te biblioteki s± potrzebne aby uruchamiaæ programy dla radioamatorów.
 Summary:	ax25 libraries development files
 Summary(pl):	Pliki dla programistów u¿ywaj±cych bibliotek ax25
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 The extra files needed to compile hamradio utilities.
@@ -41,7 +41,7 @@ Dodatkowe pliki potrzebne do kompilacji programów dla radioamatorów.
 Summary:	ax25 static libraries
 Summary(pl):	Biblioteki statyczne ax25
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 ax25 static libraries.

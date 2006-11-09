@@ -1,0 +1,2 @@
+- removed %{_includedir}/netax25 dir from -devel (belongs to glibc-devel)
+- new %doc, release 2

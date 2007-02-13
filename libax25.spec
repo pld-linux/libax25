@@ -2,7 +2,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	ax25 libraries for hamradio applications
-Summary(pl.UTF-8):   Biblioteki ax25 dla aplikacji hamradio
+Summary(pl.UTF-8):	Biblioteki ax25 dla aplikacji hamradio
 Name:		libax25
 Version:	0.0.11
 Release:	2
@@ -27,7 +27,7 @@ Te biblioteki są potrzebne aby uruchamiać programy dla radioamatorów.
 
 %package devel
 Summary:	ax25 libraries development files
-Summary(pl.UTF-8):   Pliki dla programistów używających bibliotek ax25
+Summary(pl.UTF-8):	Pliki dla programistów używających bibliotek ax25
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -39,7 +39,7 @@ Dodatkowe pliki potrzebne do kompilacji programów dla radioamatorów.
 
 %package static
 Summary:	ax25 static libraries
-Summary(pl.UTF-8):   Biblioteki statyczne ax25
+Summary(pl.UTF-8):	Biblioteki statyczne ax25
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 

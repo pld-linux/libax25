@@ -1,0 +1,11 @@
+--- libax25-0.0.11/Makefile.am.orig	2014-01-03 15:07:03.404057696 +0100
++++ libax25-0.0.11/Makefile.am	2014-01-03 15:11:25.379303221 +0100
+@@ -48,6 +48,8 @@ libax25io_la_SOURCES = \
+ 	ax25io.c \
+ 	ax25io.h 
+ 
++libax25io_la_LIBADD = -lz
++
+ man_MANS = ax25.3 rose.3 axports.5 rsports.5 nrports.5
+ 
+ 

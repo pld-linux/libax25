@@ -85,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %{_sysconfdir}/ax25/axports
 %config(noreplace) %{_sysconfdir}/ax25/nrports
 %config(noreplace) %{_sysconfdir}/ax25/rsports
-%attr(755,root,root) %ghost %{_libdir}/libax25*.so.?
+%attr(755,root,root) %ghost %{_libdir}/libax25*.so.0
 %attr(755,root,root) %{_libdir}/libax25*.so.*.*
 %dir %{_localstatedir}/ax25
 %{_mandir}/man5/*

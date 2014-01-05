@@ -7,7 +7,7 @@ Summary(pl.UTF-8):	Biblioteki ax25 dla aplikacji hamradio
 Name:		libax25
 Version:	0.0.11
 Release:	4
-License:	LGPL
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/ax25/%{name}-%{version}.tar.gz
 # Source0-md5:	c6ea01e81118451e2e892e634c576c17
@@ -26,13 +26,16 @@ These libraries are used for applications that need to get to some
 special structures used in hamradio.
 
 %description -l pl.UTF-8
-Te biblioteki są potrzebne aby uruchamiać programy dla radioamatorów.
+Te biblioteki są wykorzystywane przez aplikacje wymagające specjalnych
+struktur używanych przez urządzenia hamradio.
 
 %package devel
 Summary:	ax25 libraries development files
 Summary(pl.UTF-8):	Pliki dla programistów używających bibliotek ax25
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	glibc-devel >= 2.1
+Requires:	zlib-devel
 
 %description devel
 The extra files needed to compile hamradio utilities.
@@ -70,7 +73,8 @@ rm -f missing
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_localstatedir}/ax25
 
-%{__make} DESTDIR=${RPM_BUILD_ROOT} install installconf
+%{__make} install installconf \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -80,25 +84,33 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS NEWS README ChangeLog
+%doc AUTHORS ChangeLog NEWS README
+%attr(755,root,root) %{_libdir}/libax25.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libax25.so.0
+%attr(755,root,root) %{_libdir}/libax25io.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libax25io.so.0
 %dir %{_sysconfdir}/ax25
-%config(noreplace) %{_sysconfdir}/ax25/axports
-%config(noreplace) %{_sysconfdir}/ax25/nrports
-%config(noreplace) %{_sysconfdir}/ax25/rsports
-%attr(755,root,root) %ghost %{_libdir}/libax25*.so.0
-%attr(755,root,root) %{_libdir}/libax25*.so.*.*
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/ax25/axports
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/ax25/nrports
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/ax25/rsports
 %dir %{_localstatedir}/ax25
-%{_mandir}/man5/*
+%{_mandir}/man5/axports.5*
+%{_mandir}/man5/nrports.5*
+%{_mandir}/man5/rsports.5*
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/libax25*.la
-%attr(755,root,root) %{_libdir}/libax25*.so
-%{_mandir}/man3/*
-%{_includedir}/netax25/*
+%attr(755,root,root) %{_libdir}/libax25.so
+%attr(755,root,root) %{_libdir}/libax25io.so
+%{_libdir}/libax25.la
+%{_libdir}/libax25io.la
+%{_includedir}/netax25/*.h
+%{_mandir}/man3/ax25.3*
+%{_mandir}/man3/rose.3*
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libax25*.a
+%{_libdir}/libax25.a
+%{_libdir}/libax25io.a
 %endif

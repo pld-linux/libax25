@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	static_libs	# don't build static library
+%bcond_without	static_libs	# static library
 #
 Summary:	ax25 libraries for hamradio applications
 Summary(pl.UTF-8):	Biblioteki ax25 dla aplikacji hamradio
@@ -9,10 +9,10 @@ Version:	0.0.11
 Release:	5
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/ax25/%{name}-%{version}.tar.gz
+Source0:	https://downloads.sourceforge.net/ax25/%{name}-%{version}.tar.gz
 # Source0-md5:	c6ea01e81118451e2e892e634c576c17
 Patch0:		libadd.patch
-URL:		http://ax25.sourceforge.net/
+URL:		https://ax25.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
